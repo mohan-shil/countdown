@@ -2,9 +2,7 @@ const endDate = "20 October 2023 08:20:00 PM"
 
 document.getElementById("end-date").innerText = endDate;
 const inputs = document.querySelectorAll("input")
-    // const clock = () => {
-
-// }
+const audioElement = document.getElementById("audio");
 
 function clock() {
     const end = new Date(endDate)
@@ -20,16 +18,17 @@ function clock() {
     inputs[3].value = Math.floor(diff) % 60;
 }
 
-//playing music automatically
-function playPujaSongs(){
-    document.addEventListener("DOMContentLoaded", function () {
-        const audioElement = document.querySelector("audio");
-        audioElement.play();
-    });
-}
+  // Play audio when user interacts with the page
+  document.addEventListener("click", function () {
+    const context = new (window.AudioContext || window.webkitAudioContext)();
+    const source = context.createMediaElementSource(audioElement);
+    source.connect(context.destination);
+    audioElement.play();
+});
 
 // initial call
 clock()
+playPujaSongs()
 
 /**
  *  1 day = 24 hrs
@@ -40,6 +39,7 @@ clock()
 setInterval(
     () => {
         clock()
+    
     },
     1000
 )
