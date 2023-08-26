@@ -1,5 +1,4 @@
-const 
-endDate = "20 October 2023 08:20:00 PM"
+const endDate = "20 October 2023 08:20:00 PM"
 
 document.getElementById("end-date").innerText = endDate;
 const inputs = document.querySelectorAll("input")
@@ -19,6 +18,14 @@ function clock() {
     inputs[1].value = Math.floor(diff / 3600) % 24;
     inputs[2].value = Math.floor(diff / 60) % 60;
     inputs[3].value = Math.floor(diff) % 60;
+}
+
+//playing music automatically
+function playPujaSongs(){
+    document.addEventListener("DOMContentLoaded", function () {
+        const audioElement = document.querySelector("audio");
+        audioElement.play();
+    });
 }
 
 // initial call
