@@ -10,15 +10,10 @@
 </head>
 
 <body>
-
-    <audio controls autoplay> 
-        <source src="Puja.mp3">
-        <source src="Puja.mp4">
-        <source src="Puja.wav">
-    </audio>
     <div class="main">
         <div class="overlay">
             <div class="title">Durga Puja 2023</div>
+            <button>
             <div class="title" id="end-date">20 October 2023 10:00 PM</div>
             <div class="col">
                 <div>
@@ -44,9 +39,13 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
- 
 
+    <!-- No autoplay attribute -->
+    <audio controls id="audio">
+        <source src="Puja.mp3">
+    </audio>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
